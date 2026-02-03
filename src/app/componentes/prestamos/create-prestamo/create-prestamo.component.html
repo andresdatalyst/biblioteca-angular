@@ -1,0 +1,36 @@
+
+<div class="container-fluid" style="border: 1px solid black; background-color:rgb(64, 133, 224);">
+  <h1 style="text-align: center;">Crear Un Préstamo</h1>
+  </div>
+  <!--Realizo el create con dos select, uno con un array de todos los socios y otro con un array de libros que no se encuentran prestados actualmente, también incluyo un selector de fecha, para la devolución del préstamo-->
+<form (ngSubmit)="newPrestamo(newPrestamoForm.value)" [formGroup]="newPrestamoForm">
+<div class="container" style="margin-top: 20px;">
+
+  <mat-form-field appearance="fill" style="margin-right: 150px; margin-left: 150px;">
+    <mat-label>Libros</mat-label>
+    <mat-select formControlName="libroID">
+      <mat-option *ngFor="let libro of libros" [value]="libro.id">
+        {{libro.data.titulo}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="margin-right: 150px;">
+    <mat-label>Socios</mat-label>
+    <mat-select formControlName="socioID">
+      <mat-option *ngFor="let socio of socios" [value]="socio.id">
+        {{socio.data.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<!--
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de devolución</mat-label>
+    <input formControlName="fechaFin" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>-->
+
+</div>
+<button  type="submit" class="btn btn-primary" [disabled]="!newPrestamoForm.valid" style="display: block; margin: 0 auto;">Crear</button>
+</form>

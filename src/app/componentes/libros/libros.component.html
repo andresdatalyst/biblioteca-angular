@@ -1,0 +1,43 @@
+<div class="container-fluid" style="border: 1px solid black; background-color:rgb(64, 133, 224);">
+<h1 style="text-align: center;">Lista de Libros</h1>
+</div>
+<!-- Intento de hacer un buscador, con método de firebase y con pipe, no funciona
+  
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Buscador por nombre</mat-label>
+    <input matInput placeholder="Búsqueda"  [ngModel]=titulo>
+    <input type="submit" (click)="buscar()">
+  </mat-form-field>-->
+
+<div class="container">
+
+  <mat-grid-list cols="4" rowHeight="1:2">
+
+    <mat-grid-tile *ngFor="let libro of libros "> <!--| miFiltro: libros:['titulo']-->
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{libro.data.foto}}" alt="Card image cap" style="image-resolution: 286;">
+        <div class="card-body">
+          <h5 class="card-title">{{libro.data.titulo}}</h5>
+          <!--Con un ngif hago que muestra dependiendo del campo prestado del libro si está disponible para su préstamo o no-->
+          <p class="card-text" *ngIf="libro.data.prestado">Préstamo no disponible</p>
+          <p class="card-text" *ngIf="!libro.data.prestado">Préstamo disponible</p>
+          <button mat-raised-button color="primary" routerLink="Editar/{{libro.id}}">Editar</button>
+          <!-- Pongo un disabled en el caso de que prestado sea igual a true, para que no pueda eliminarse ese libro-->
+          <button  mat-raised-button color="warn" (click)=deleteLibro(libro.id) [disabled]=libro.data.prestado>Descatalogar</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</div>
+
+
+
+
+
+
+
+ <!--Realizo un ngIf para mostar si está disponible a través de la propiedad prestado de libro-->
+

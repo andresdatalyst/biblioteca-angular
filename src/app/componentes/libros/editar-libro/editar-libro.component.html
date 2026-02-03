@@ -1,0 +1,46 @@
+
+<div class="container-fluid" style="border: 1px solid black; background-color:rgb(64, 133, 224);">
+  <h1 style="text-align: center;">Editar Libro</h1>
+  </div>
+<div class="container">
+<form (ngSubmit)="editLibro(newLibroForm.value)" [formGroup]="newLibroForm">
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Título</mat-label>
+    <input matInput  formControlName="titulo">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Autor</mat-label>
+    <input matInput  formControlName="autor">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Imagen URL</mat-label>
+    <input matInput  formControlName="foto">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Categoría</mat-label>
+    <input matInput  formControlName="categoria">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Descripción</mat-label>
+    <input matInput  formControlName="description">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Editorial</mat-label>
+    <input matInput  formControlName="editorial">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Número de páginas</mat-label>
+    <input matInput  formControlName="numPag">
+  </mat-form-field>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="!newLibroForm.valid">Editar</button>
+</form>
+</div>

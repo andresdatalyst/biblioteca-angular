@@ -1,0 +1,41 @@
+<div class="container form-signup">
+  <div class="row align-items-center justify-content-center">
+  <form>
+    <div class="authBlock">
+      <h3>Sign Up</h3>
+
+      <div class="form-floating">
+        <input type="email" id="email" class="form-control" placeholder="Email Address" #userEmail required>
+        <label for="email">Username</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" id="password" class="form-control" placeholder="Password" #userPwd required>
+        <label for="password">Password</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="button" class="btn btn-primary w-100" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <!-- Continue with Google -->
+      <div class="formGroup">
+        <button type="button" class="btn btn-success" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Continue with Google
+        </button>
+      </div>
+
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Already have an account? <span class="pointer" routerLink="/sign-in">Log In</span></span>
+    </div>
+  </form>
+
+  </div>
+
+</div>

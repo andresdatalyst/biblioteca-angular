@@ -1,0 +1,37 @@
+<div class="container-fluid" style="border: 1px solid black; background-color:rgb(64, 133, 224);">
+  <h1 style="text-align: center;">Lista de Préstamos</h1>
+  </div>
+
+
+  <div class="container mt-5">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+
+          <th>Fecha del Préstamo</th>
+         <!-- <th>Fecha Devolución</th>-->
+         <th>Titulo del libro</th>
+         <th>Nombre del socio</th>
+        <th>Acciones</th>
+
+        </tr>
+      </thead>
+      <tbody *ngFor="let prestamo of prestamos">
+        <tr>
+
+         <td>{{prestamo.data.fecha.seconds * 1000 | date :'dd/MM/yyyy'}}</td> <!-- el .seconds*1000 lo realizo para que pueda mostrar bien la
+          fecha, si no puestra TimeStamp...
+          <!-<td>{{prestamo.data.fechaFin.seconds * 1000 | date :'dd/MM/yyyy'}}</td>-->
+          <td>{{prestamo.data.nombreLibro}}</td>
+          <td>{{prestamo.data.nombreSocio}}</td>
+         <td>
+          <button mat-raised-button color="primary" routerLink="Detalle/{{prestamo.id}}">Detalles</button>
+         </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+
+

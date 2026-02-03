@@ -1,0 +1,51 @@
+<div class="container form-signin mt-5">
+  <div class="row align-items-center justify-content-center">
+    <form>
+      <h3 class="h3 mb-3 fw-normal">Sign In</h3>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" #userName placeholder="username" required>
+        <label for="email">Username</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" placeholder="password" #userPassword required>
+        <label for="password">Password</label>
+      </div>
+
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <button class="w-100 btn btn-lg btn-primary" (click)="authService.SignIn(userName.value, userPassword.value)">
+          Log
+          In
+        </button>
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <div class="formGroup">
+        <button type="button" class="w-100 btn btn-secondary" (click)="authService.GoogleAuth()" routerLink="/dashboard">
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button>
+      </div>
+
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+
+
+      <div class="redirectToLogin">
+        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+

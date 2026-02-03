@@ -1,0 +1,37 @@
+<div class="container-fluid" style="border: 1px solid black; background-color:rgb(64, 133, 224);">
+  <h1 style="text-align: center;">Lista de Socios</h1>
+  </div>
+  <div class="container">
+<div class="container mt-5">
+<!--He decidido mostrar los socios con una tabla de bootstrap-->
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+    <th>Nick</th>
+    <th>Pais</th>
+    <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let socio of socios">
+    <tr>
+     <td>{{socio.data.nombre}}</td>
+     <td>{{socio.data.apellidos}}</td>
+     <td>{{socio.data.edad}}</td>
+     <td>{{socio.data.nick}}</td>
+     <td>{{socio.data.pais}}</td>
+     <td>
+      <button mat-raised-button color="primary" routerLink="Editar/{{socio.id}}">Editar</button>
+      <!-- Pongo un disabled en el caso de que activo sea igual a true, para que no pueda eliminarse ese socio-->
+      <button mat-raised-button color="warn" (click)=deleteSocio(socio.id) [disabled]=socio.data.activo >Dar de baja</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+
