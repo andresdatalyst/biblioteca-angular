@@ -79,27 +79,7 @@ ng serve
 - `npm run build` - Build de producción (salida en `dist/`)
 - `npm test` - Ejecuta tests unitarios con Karma
 
----
 
-## ✅ Buenas prácticas y recomendaciones
-
-- Actualizar `@angular/fire` para usar la nueva API modular (v9+) y migrar de `compat` si se desea optimizar bundle y compatibilidad con tree-shaking.
-- Añadir pruebas unitarias más completas (cobertura sobre servicios y lógica de componentes).
-- Añadir validaciones y manejo de errores más robusto en formularios y servicios.
-- Configurar CI (GitHub Actions) para ejecutar lint, tests y build automáticamente.
-- Revisar reglas de seguridad de Firestore antes de exponer el proyecto públicamente.
-
----
-
-## 📸 Capturas / Demo
-
-Incluye aquí capturas de pantalla del proyecto (`/docs` o `/screenshots`) o un enlace a una demo desplegada (ej. Firebase Hosting o Netlify).
-
----
-
-## ✍️ Licencia
-
-Licencia a elección (p.ej. MIT). Reemplaza este texto según prefieras.
 
 ---
 
